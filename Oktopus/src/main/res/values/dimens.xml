@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin80">80dp</dimen>
+    <dimen name="margin60">60dp</dimen>
+    <dimen name="margin30">30dp</dimen>
+    <dimen name="margin20">20dp</dimen>
+    <dimen name="margin10">10dp</dimen>
+    <dimen name="margin15">15dp</dimen>
+    <dimen name="margin5">5dp</dimen>
+    <dimen name="margin0">0dp</dimen>
+    
+    <dimen name="text25">25dp</dimen>
+    <dimen name="text22">22dp</dimen>
+    <dimen name="text15">15dp</dimen>
+    <dimen name="text18">18dp</dimen>
+    <dimen name="text10">12dp</dimen>
+    <dimen name="text30">30dp</dimen>
+    <dimen name="text35">35dp</dimen>
+    <dimen name="text55">55dp</dimen>
+    
+    <dimen name="standardButtonHeight">40dp</dimen>
+    <dimen name="bigButtonHeight">60dp</dimen>
+    
+</resources>

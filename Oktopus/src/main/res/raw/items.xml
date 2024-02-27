@@ -1,0 +1,786 @@
+<flow companyName="" companyId="1">
+   <flowModules class="java.util.ArrayList">
+      <module class="com.thirtythreelabs.flowmodel.DataModule" name="getItems" timeOut="0" type="data" start="true">
+         <data>
+            <action>getItems</action>
+            <outcomeList class="java.util.ArrayList">
+               <outcome result="true" type="module">
+                  <gotoWhere>getNextItem</gotoWhere>
+                  <say class="java.util.ArrayList"/>
+               </outcome>
+               <outcome result="false" type="module">
+                  <gotoWhere>getItems</gotoWhere>
+                  <say class="java.util.ArrayList"/>
+               </outcome>
+            </outcomeList>
+         </data>
+      </module>
+
+      <module class="com.thirtythreelabs.flowmodel.DataModule" name="getNextItem" timeOut="0" type="data" start="false">
+         <data>
+            <action>getNextItem</action>
+            <outcomeList class="java.util.ArrayList">
+               <outcome result="true" type="module">
+                  <gotoWhere>item</gotoWhere>
+                  <say class="java.util.ArrayList"/>
+               </outcome>
+               <outcome result="false" type="module">
+                  <gotoWhere>getPauseItems</gotoWhere>
+                  <say class="java.util.ArrayList"/>
+               </outcome>
+            </outcomeList>
+         </data>
+      </module>
+
+      <module class="com.thirtythreelabs.flowmodel.DataModule" name="getItemManually" timeOut="0" type="data" start="false">
+         <data>
+            <action>getItemManually</action>
+            <outcomeList class="java.util.ArrayList">
+               <outcome result="true" type="module">
+                  <gotoWhere>item</gotoWhere>
+                  <say class="java.util.ArrayList"/>
+               </outcome>
+               <outcome result="false" type="module">
+                  <gotoWhere>getNextItem</gotoWhere>
+                  <say class="java.util.ArrayList"/>
+               </outcome>
+            </outcomeList>
+         </data>
+      </module>
+
+      <module class="com.thirtythreelabs.flowmodel.DataModule" name="saveItem" timeOut="0" type="data" start="false">
+         <data>
+            <action>saveItem</action>
+            <outcomeList class="java.util.ArrayList">
+               <outcome result="true" type="module">
+                  <gotoWhere>getNextItem</gotoWhere>
+                  <say class="java.util.ArrayList"/>
+               </outcome>
+            </outcomeList>
+         </data>
+      </module>
+
+      <module class="com.thirtythreelabs.flowmodel.DataModule" name="saveDefaultItem" timeOut="0" type="data" start="false">
+         <data>
+            <action>saveDefaultItem</action>
+            <outcomeList class="java.util.ArrayList">
+               <outcome result="true" type="module">
+                  <gotoWhere>getNextItem</gotoWhere>
+                  <say class="java.util.ArrayList"/>
+               </outcome>
+            </outcomeList>
+         </data>
+      </module>
+
+      <module class="com.thirtythreelabs.flowmodel.DataModule" name="pauseItem" timeOut="0" type="data" start="false">
+         <data>
+            <action>pauseItem</action>
+            <outcomeList class="java.util.ArrayList">
+               <outcome result="true" type="module">
+                  <gotoWhere>getNextItem</gotoWhere>
+                  <say class="java.util.ArrayList"/>
+               </outcome>
+            </outcomeList>
+         </data>
+      </module>
+
+      <module class="com.thirtythreelabs.flowmodel.DataModule" name="getNextItem" timeOut="0" type="data" start="false">
+         <data>
+            <action>getNextItem</action>
+            <outcomeList class="java.util.ArrayList">
+               <outcome result="true" type="module">
+                  <gotoWhere>item</gotoWhere>
+                  <say class="java.util.ArrayList"/>
+               </outcome>
+               <outcome result="false" type="module">
+                  <gotoWhere>getPauseItems</gotoWhere>
+                  <say class="java.util.ArrayList"/>
+               </outcome>
+            </outcomeList>
+         </data>
+      </module>
+
+      <module class="com.thirtythreelabs.flowmodel.DataModule" name="getPauseItems" timeOut="0" type="data" start="false">
+         <data>
+            <action>getPauseItems</action>
+            <outcomeList class="java.util.ArrayList">
+               <outcome result="true" type="module">
+                  <gotoWhere>pauseItems</gotoWhere>
+                  <say class="java.util.ArrayList"/>
+               </outcome>
+               <outcome result="false" type="module">
+                  <gotoWhere>finishOrder</gotoWhere>
+                  <say class="java.util.ArrayList"/>
+               </outcome>
+            </outcomeList>
+         </data>
+      </module>
+
+      <module class="com.thirtythreelabs.flowmodel.FlowModule" name="item" timeOut="0" type="flow" start="false">
+         <say class="java.util.ArrayList">
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">Artículo</phrase>
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemHowToRead</phrase>
+         </say>
+
+
+         <listenTo class="java.util.ArrayList">
+            <command help="para saltear y pasar al siguiente artículo">
+               <inputList class="java.util.ArrayList">
+                  <utterance>siguiente</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="module">
+                     <gotoWhere>pauseItem</gotoWhere>
+                     <say class="java.util.ArrayList"/>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para cancelar el pedido">
+               <inputList class="java.util.ArrayList">
+                  <utterance>cancelar</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="module">
+                     <gotoWhere>cancelOrder</gotoWhere>
+                     <say class="java.util.ArrayList"/>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <!-- DATOS -->
+            <command help="para escuchar todos los datos del pedido">
+               <inputList class="java.util.ArrayList">
+                  <utterance>artículo</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemHowToRead</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">.</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemBrandName</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">.</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemDescription</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">.</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemOrigin</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">. Existencia</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemInventory</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help=" para escuchar todos los datos del pedido">
+               <inputList class="java.util.ArrayList">
+                  <utterance>pedido</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">Pedido número</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">orderNumber</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">. Envío por: </phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">orderTypeName</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">.</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">orderTotalLines</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">.</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">vendedor</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">orderSalesManId</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">,</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">orderSalesManName</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">. Cliente</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">orderCustomerName</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">. Nota:</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">orderNotes</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+
+            <command help=" para escuchar el número de pedido">
+               <inputList class="java.util.ArrayList">
+                  <utterance>número</utterance>
+                  <utterance>numero</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">Pedido número</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">orderNumber</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help=" para escuchar la forma de envío">
+               <inputList class="java.util.ArrayList">
+                  <utterance>envío</utterance>
+                  <utterance>envio</utterance>
+                  <utterance>envia</utterance>
+                  <utterance>envios</utterance>
+                  <utterance>emilio</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">Envío por </phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">orderTypeName</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help=" para escuchar el total de artículos">
+               <inputList class="java.util.ArrayList">
+                  <utterance>total</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">orderTotalLines</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help=" para escuchar el número y nombre del vendedor">
+               <inputList class="java.util.ArrayList">
+                  <utterance>vendedor</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">vendedor</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">orderSalesManId</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">,</phrase>
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">orderSalesManName</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help=" para escuchar el nombre del comprador">
+               <inputList class="java.util.ArrayList">
+                  <utterance>comprador</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">orderCustomerName</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help=" para escuchar las notas del pedido">
+               <inputList class="java.util.ArrayList">
+                  <utterance>notas</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">orderNotes</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para escuchar el código del artículo">
+               <inputList class="java.util.ArrayList">
+                  <utterance>código</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemHowToRead</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para escuchar la familia del artículo">
+               <inputList class="java.util.ArrayList">
+                  <utterance>familia</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemFamily</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+            
+            <command help="para escuchar la marca del artículo">
+               <inputList class="java.util.ArrayList">
+                  <utterance>marca</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemBrandName</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para escuchar el proveedor del artículo">
+               <inputList class="java.util.ArrayList">
+                  <utterance>proveedor</utterance>
+                  <utterance>provedor</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemSupplierName</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para escuchar la descripción del artículo">
+               <inputList class="java.util.ArrayList">
+                  <utterance>descripción</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemDescription</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para escuchar el origen del artículo">
+               <inputList class="java.util.ArrayList">
+                  <utterance>origen</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemOrigin</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para escuchar la cantidad a tomar">
+               <inputList class="java.util.ArrayList">
+                  <utterance>cantidad</utterance>
+                  <utterance>cantida</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemQuantity</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para escuchar la existencia del artículo">
+               <inputList class="java.util.ArrayList">
+                  <utterance>existencia</utterance>
+                  <utterance>existen</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemInventory</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para escuchar cuantos tomar">
+               <inputList class="java.util.ArrayList">
+                  <utterance>pronto</utterance>
+                  <utterance>pronta</utterance>
+                  <utterance>listo</utterance>
+                  <utterance>lista</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="module">
+                     <gotoWhere>pick</gotoWhere>
+                     <say class="java.util.ArrayList"/>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help=" para silenciar">
+               <inputList class="java.util.ArrayList">
+                  <utterance>silencio</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="module">
+                     <gotoWhere>mute</gotoWhere>
+                     <say class="java.util.ArrayList"/>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para escuchar lo último dicho">
+               <inputList class="java.util.ArrayList">
+                  <utterance>repite</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="method">sayAgain</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help=" para escuchar los comandos disponibles">
+               <inputList class="java.util.ArrayList">
+                  <utterance>comandos</utterance>
+                  <utterance>comando</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="method">help</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+         </listenTo>
+      </module>
+
+      <module class="com.thirtythreelabs.flowmodel.FlowModule" name="pick" timeOut="0" type="flow" start="false">
+         <say class="java.util.ArrayList">
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">Tome</phrase>
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemQuantity</phrase>
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemUnitDescription</phrase>
+         </say>
+
+         <listenTo class="java.util.ArrayList">
+
+            <command help=" y un número para indicar la cantidad tomada">
+               <inputList class="java.util.ArrayList">
+                  <utterance type="qty">tomo</utterance>
+                  <utterance type="qty">como</utterance>
+                  <utterance type="qty">tom</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="module">
+                     <gotoWhere>confirm</gotoWhere>
+                     <say class="java.util.ArrayList"/>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para confirmar la cantidad tomada">
+               <inputList class="java.util.ArrayList">
+                  <utterance>pronto</utterance>
+                  <utterance>listo</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="module">
+                     <gotoWhere>savedefaultitem</gotoWhere>
+                     <say class="java.util.ArrayList"/>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para cancelar el pedido">
+               <inputList class="java.util.ArrayList">
+                  <utterance>cancelar</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="module">
+                     <gotoWhere>cancelOrder</gotoWhere>
+                     <say class="java.util.ArrayList"/>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help=" para silenciar">
+               <inputList class="java.util.ArrayList">
+                  <utterance>silencio</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="module">
+                     <gotoWhere>mute</gotoWhere>
+                     <say class="java.util.ArrayList"/>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para escuchar lo último dicho">
+               <inputList class="java.util.ArrayList">
+                  <utterance>repite</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="method">sayAgain</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help=" para escuchar los comandos disponibles">
+               <inputList class="java.util.ArrayList">
+                  <utterance>comandos</utterance>
+                  <utterance>comando</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="method">help</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+            
+         </listenTo>
+      </module>
+
+      <module class="com.thirtythreelabs.flowmodel.FlowModule" name="confirm" timeOut="0" type="flow" start="false">
+         <say class="java.util.ArrayList">
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">Confirma</phrase>
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">itemsPicked</phrase>
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">?</phrase>
+         </say>
+
+         <listenTo class="java.util.ArrayList">
+
+            <command help="para confirmar la cantidad escuchada">
+               <inputList class="java.util.ArrayList">
+                  <utterance>confirmo</utterance>
+                  <utterance>confirma</utterance>
+                  <utterance>si</utterance>
+                  <utterance>sí</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="module">
+                     <gotoWhere>saveItem</gotoWhere>
+                     <say class="java.util.ArrayList"/>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="y un número para corregir la cantidad escuchada">
+               <inputList class="java.util.ArrayList">
+                  <utterance type="qty">tomo</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="module">
+                     <gotoWhere>confirm</gotoWhere>
+                     <say class="java.util.ArrayList"/>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+
+            <command help=" para silenciar">
+               <inputList class="java.util.ArrayList">
+                  <utterance>silencio</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="module">
+                     <gotoWhere>mute</gotoWhere>
+                     <say class="java.util.ArrayList"/>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para escuchar lo último dicho">
+               <inputList class="java.util.ArrayList">
+                  <utterance>repite</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="method">sayAgain</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help=" para escuchar los comandos disponibles">
+               <inputList class="java.util.ArrayList">
+                  <utterance>comandos</utterance>
+                  <utterance>comando</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="method">help</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+            
+         </listenTo>
+      </module>
+
+
+      <module class="com.thirtythreelabs.flowmodel.FlowModule" name="pauseItems" timeOut="0" type="flow" start="false">
+         <say class="java.util.ArrayList">
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="method">getHowManyPausedItems</phrase>
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">Retomar artículos pausados?</phrase>
+         </say>
+
+         <listenTo class="java.util.ArrayList">
+
+            <command help="para retomar los artículos pausados">
+               <inputList class="java.util.ArrayList">
+                  <utterance>si</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="method">
+                     <gotoWhere>setPausedItemsAndGetNextItem</gotoWhere>
+                     <say class="java.util.ArrayList"/>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help="para continuar con el siguiente pedido">
+               <inputList class="java.util.ArrayList">
+                  <utterance>no</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="false" type="module">
+                     <gotoWhere>finishWithPausedItems</gotoWhere>
+                     <say class="java.util.ArrayList"/>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help=" para silenciar">
+               <inputList class="java.util.ArrayList">
+                  <utterance>silencio</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="module">
+                     <gotoWhere>mute</gotoWhere>
+                     <say class="java.util.ArrayList"/>
+                  </outcome>
+               </outcomeList>
+            </command>
+            
+            <command help="para escuchar lo último dicho">
+               <inputList class="java.util.ArrayList">
+                  <utterance>repite</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="method">sayAgain</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+
+            <command help=" para escuchar los comandos disponibles">
+               <inputList class="java.util.ArrayList">
+                  <utterance>comandos</utterance>
+                  <utterance>comando</utterance>
+               </inputList>
+               <outcomeList class="java.util.ArrayList">
+                  <outcome result="true" type="say">
+                     <gotoWhere></gotoWhere>
+                     <say class="java.util.ArrayList">
+                        <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="method">help</phrase>
+                     </say>
+                  </outcome>
+               </outcomeList>
+            </command>
+         </listenTo>
+
+      </module>
+
+      <module class="com.thirtythreelabs.flowmodel.SayDoModule" name="finishWithPausedItems" timeOut="0" type="sayDo" start="false">
+
+         <say class="java.util.ArrayList">
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">Pedido incompleto.</phrase>
+         </say>
+
+         <outcomeList class="java.util.ArrayList">
+            <outcome result="true" type="activity">
+               <gotoWhere>OrdersActivity.class</gotoWhere>
+               <say class="java.util.ArrayList"/>
+            </outcome>
+         </outcomeList>
+
+      </module>
+
+      <module class="com.thirtythreelabs.flowmodel.SayDoModule" name="finishOrder" timeOut="0" type="sayDo" start="false">
+
+         <say class="java.util.ArrayList">
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">Pedido completo.</phrase>
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">Envío por </phrase>
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="data">ordertypename</phrase>
+         </say>
+
+         <outcomeList class="java.util.ArrayList">
+            <outcome result="true" type="activity">
+               <gotoWhere>OrdersActivity.class</gotoWhere>
+               <say class="java.util.ArrayList"/>
+            </outcome>
+         </outcomeList>
+
+      </module>
+
+      <module class="com.thirtythreelabs.flowmodel.SayDoModule" name="cancelOrder" timeOut="0" type="sayDo" start="false">
+
+         <say class="java.util.ArrayList">
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="string">Pedido cancelado.</phrase>
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="method">getHowManyPickedItems</phrase>
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="method">getHowManyPausedItems</phrase>
+            <phrase pauseAfter="0" pauseBefore="0" pitch="1.0" speed="1.0" type="method">getHowManyPendingItems</phrase>
+         </say>
+
+         <outcomeList class="java.util.ArrayList">
+            <outcome result="true" type="activity">
+               <gotoWhere>OrdersActivity.class</gotoWhere>
+               <say class="java.util.ArrayList"/>
+            </outcome>
+         </outcomeList>
+
+      </module>
+
+      <module class="com.thirtythreelabs.flowmodel.SayDoModule" name="mute" timeOut="0" type="sayDo" start="false">
+
+         <say class="java.util.ArrayList">
+         </say>
+
+         <outcomeList class="java.util.ArrayList">
+            <outcome result="true" type="method">
+               <gotoWhere>mute</gotoWhere>
+               <say class="java.util.ArrayList"/>
+            </outcome>
+         </outcomeList>
+
+      </module>
+
+   </flowModules>
+</flow>

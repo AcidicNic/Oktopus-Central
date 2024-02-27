@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin10"
+    android:layout_marginRight="@dimen/margin10"
+    android:layout_marginTop="@dimen/margin5"
+    android:orientation="vertical" 
+    android:focusableInTouchMode="true" >
+
+    <TextView
+        android:id="@+id/testText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TESTING" 
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:background="#ff0000"
+        android:textSize="@dimen/text15" />
+    
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/login_logo" />
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin30"
+    	android:layout_marginRight="@dimen/margin30"
+        android:layout_weight="1"
+        android:text="@string/NAME" />
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin30"
+    	android:layout_marginRight="@dimen/margin30"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/tvPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin15"
+        android:layout_marginLeft="@dimen/margin30"
+    	android:layout_marginRight="@dimen/margin30"
+        android:layout_weight="1"
+        android:text="@string/PASSWORD" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin30"
+    	android:layout_marginRight="@dimen/margin30"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="numberPassword" />
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/ButtonEntrar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin30"
+        android:layout_marginRight="@dimen/margin30"
+        android:layout_marginTop="@dimen/margin15"
+        android:layout_weight="1"
+        android:background="@color/green_button"
+        android:focusable="false"
+        android:minHeight="@dimen/bigButtonHeight"
+        android:text="@string/LOGIN"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text15"
+        android:textStyle="bold" />
+
+</LinearLayout> 

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/margin80" >
+
+            <TextView
+                android:id="@+id/itemLineaTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin5"
+                android:textSize="@dimen/text10" />
+
+            <TextView
+                android:id="@+id/itemIdTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="@dimen/text30"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/itemLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin5"
+                android:text=""
+                android:textSize="@dimen/text18" />
+            
+            <TextView
+                android:id="@+id/itemDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin5"
+                android:text="@string/DESCRIPTION"
+                android:textSize="@dimen/text15" />
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/margin10" >
+
+            <TextView
+                android:id="@+id/cantidadTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="@dimen/margin5"
+                android:text="@string/QTY"
+                android:textSize="@dimen/text10" />
+
+            <TextView
+                android:id="@+id/itemCantidadTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="0"
+                android:textSize="@dimen/text30"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/itemUnidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="@dimen/margin5"
+                android:text="@string/UNIT"
+                android:textSize="@dimen/text15" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/margin80"
+        android:paddingRight="@dimen/margin10" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="vertical" >
+                
+				<Button
+				    android:id="@+id/imageButton"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_marginBottom="@dimen/margin10"
+				    android:layout_marginRight="@dimen/margin5"
+				    android:background="@color/light_blue_button"
+				    android:minHeight="40dp"
+				    android:paddingLeft="@dimen/margin10"
+				    android:paddingRight="@dimen/margin10"
+				    android:text="@string/IMAGE"
+				    android:textColor="@color/white"
+				    android:textSize="@dimen/text15"
+				    android:textStyle="bold" />
+				
+                <TextView
+                    android:id="@+id/itemBrandName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin5"
+                    android:text="@string/BRAND"
+                    android:textSize="@dimen/text15" />
+
+                <TextView
+                    android:id="@+id/itemOrigin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin5"
+                    android:text="@string/ORIGIN"
+                    android:textSize="@dimen/text15" />
+
+                <TextView
+                    android:id="@+id/itemSupplierName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin5"
+                    android:text="@string/SUPPLIER"
+                    android:textSize="@dimen/text15" />
+
+                <TextView
+                    android:id="@+id/itemInventory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin10"
+                    android:text="@string/INVENTORY"
+                    android:textSize="@dimen/text15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/itemDiffToPick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin5"
+                    android:layout_gravity="right"
+                    android:text="@string/TRICKY" 
+                    android:background="#ffcc00"
+                    android:textSize="@dimen/text15" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/pauseItemButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin10"
+                    android:layout_marginRight="@dimen/margin5"
+                    android:layout_weight="1"
+                    android:background="@color/orange_button"
+                    android:minHeight="@dimen/bigButtonHeight"
+                    android:text="@string/PAUSE_THIS_ITEM"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text15"
+                    android:textStyle="bold" />
+           
+                <Button
+                    android:id="@+id/manualInput2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin10"
+                    android:layout_marginRight="@dimen/margin5"
+                    android:layout_marginLeft="@dimen/margin5"
+                    android:layout_weight="1"
+                    android:background="@color/light_blue_button"
+                    android:minHeight="@dimen/bigButtonHeight"
+                    android:text="@string/MANUAL_INPUT"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text15"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/totalInput2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin10"
+                    android:layout_marginLeft="@dimen/margin5"
+                    android:layout_weight="2"
+                    android:background="@color/green_button"
+                    android:minHeight="@dimen/bigButtonHeight"
+                    android:text="@string/GOT_ALL"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text15"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout> 

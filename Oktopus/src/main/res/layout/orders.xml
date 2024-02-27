@@ -1,0 +1,211 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ListaDePedidosActivity" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/pedidoTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin5"
+                        android:paddingLeft="@dimen/margin10"
+                        android:text="@string/TOTAL"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text10" />
+
+                    <TextView
+                        android:id="@+id/totalPedidos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/margin10"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text30"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/vendedorTipo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin5"
+                        android:paddingLeft="@dimen/margin10"
+                        android:text="@string/ORDERS"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text15" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/operatorAndFloor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/margin5"
+                        android:gravity="center"
+                        android:text="@string/FLOOR"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/TextView05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="@dimen/margin10"
+                        android:layout_marginTop="@dimen/margin5"
+                        android:paddingLeft="@dimen/margin10"
+                        android:text="@string/PRIORITY"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text10" />
+
+                    <TextView
+                        android:id="@+id/prioridadAlta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:paddingRight="@dimen/margin10"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text15"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/prioridadMedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:paddingRight="@dimen/margin10"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text15"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/priorodadBaja"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="@dimen/margin5"
+                        android:paddingRight="@dimen/margin10"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text15"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+				
+				<ImageButton
+                    android:id="@+id/preferences"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin10"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:layout_marginRight="@dimen/margin5"
+                    android:layout_weight="0"
+                    android:background="@color/orange_button"
+                    android:minHeight="@dimen/standardButtonHeight"
+                    android:minWidth="@dimen/standardButtonHeight"
+                    android:src="@drawable/preferences"
+                    android:textStyle="bold" />
+				
+                <Button
+                    android:id="@+id/exitButton"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin10"
+                    android:layout_marginLeft="@dimen/margin5"
+                    android:layout_marginRight="@dimen/margin5"
+                    android:layout_weight="1"
+                    android:background="@color/orange_button"
+                    android:minHeight="@dimen/standardButtonHeight"
+                    android:text="@string/CHANGE_WAREHOUSE"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text15"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/closedOrders"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin10"
+                    android:layout_marginLeft="@dimen/margin5"
+                    android:layout_marginRight="@dimen/margin5"
+                    android:layout_weight="1"
+                    android:background="@color/light_blue_button"
+                    android:minHeight="@dimen/standardButtonHeight"
+                    android:text="@string/CLOSED_ORDERS"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text15"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/muteButton"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin10"
+                    android:layout_marginLeft="@dimen/margin5"
+                    android:layout_marginRight="@dimen/margin10"
+                    android:layout_weight="1"
+                    android:background="@color/red_button"
+                    android:minHeight="@dimen/standardButtonHeight"
+                    android:text="@string/MUTE"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text15"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="2"
+        android:divider="#000000"
+        android:dividerHeight="1px" >
+    </ListView>
+
+</LinearLayout>

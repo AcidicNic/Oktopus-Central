@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Oktopus Picking</string>
+    <string name="PICKING_SYSTEM">Picking System</string>
+    <string name="menu_settings">Settings</string>
+    
+    <string name="NAME">NAME</string>
+    <string name="PASSWORD">PASSWORD</string>
+    <string name="SECTION">SECTION</string>
+    <string name="LOGIN">LOGIN</string>
+    <string name="FLOOR">FLOOR</string>
+    <string name="WAREHOUSE">WAREHOUSE</string>
+    <string name="CHANGE_WAREHOUSE">CHANGE WAREHOUSE</string>
+
+    <string name="DESCRIPTION">DESCRIPTION</string>
+    <string name="LOCATION">UBICACION</string>
+    <string name="ROW">ROW</string>
+    <string name="AISLE">AISLE</string>
+    <string name="LEVEL">LEVEL</string>
+    <string name="IMAGE">IMAGE</string>
+     
+    <string name="QTY">QTY</string>
+    <string name="UNIT">UNIT</string>
+    <string name="UNITS">UNITS</string>
+    <string name="METER">METER</string>
+    <string name="METERS">METERS</string>
+    <string name="KILO">KILO</string>
+    <string name="KILOS">KILOS</string>
+    <string name="HUNDRED">HUNDRED</string>
+    <string name="HUNDREDS">HUNDREDS</string>
+    <string name="OF">OF</string>
+    <string name="BRAND">BRAND</string>
+    <string name="ORIGIN">"ORIGIN"</string>
+    <string name="SUPPLIER">"SUPPLIER"</string>
+    <string name="INVENTORY">"INVENTORY"</string>
+    <string name="NOTES">"NOTES"</string>
+    <string name="NO_NOTES">"NO NOTES"</string>
+    
+    
+    <string name="ORDER_NBR">ORDER #</string>
+    <string name="ORDER_TYPE">ORDER TYPE</string>
+    <string name="SALESMAN">SALESMAN</string>
+    <string name="CUSTOMER">CUSTOMER</string>
+    <string name="TOTAL_ITEMS">TOTAL ITEMS</string>
+    <string name="TRICKY">DIFF</string>
+    <string name="REMAINING">REMAINING</string>
+    <string name="PROGRESS">PROGRESS</string>
+    
+    <string name="VIEW_ORDER">VIEW ORDER</string>
+    <string name="TAKE_ORDER">TAKE ORDER</string>
+    
+    <string name="ORDERS">ORDERS</string>
+    <string name="CLOSED_ORDERS">CLOSED ORDERS</string>
+    <string name="FUTURE_BILLING">FACTURACION FUTURA</string>
+    <string name="TODAY_BILLING">TODAYS BILLING</string>
+    <string name="ORDER">ORDER</string>
+    <string name="ORDER_CANCELED">ORDER CANCELED</string>
+    <string name="ORDER_PAUSED">ORDER PAUSED</string>
+    <string name="CANCEL_ORDER">CANCEL ORDER</string>
+    <string name="NEXT">NEXT</string>
+    <string name="ORDER_NUMBER">ORDER NUMBER</string>
+    <string name="TAKE">TAKE</string>
+    <string name="GET">GET</string>
+    <string name="GOT_ALL">GOT ALL</string>
+    <string name="DATE">DATE</string>
+    <string name="BILLING_DATE">FECHA DE FACTURACION</string>
+    
+    <string name="INSERT_QUANTITY">INSERT QUANTITY</string>
+    
+    <string name="WAITING_FOR_ORDERS">WAITING FOR ORDERS</string>
+    <string name="RETRYING_IN">RETRYING IN</string>
+    
+    <string name="INPUT">INGRESO</string>
+    <string name="MANUAL_INPUT">MANUAL INPUT</string>
+    
+    <string name="ITEM">ITEM</string>
+    <string name="ONE_ITEM">one item</string>
+    <string name="ITEMS">items</string>
+    
+    <string name="UNO">one</string>
+    <string name="UN">one</string>
+    
+    <string name="ONE_PAUSED_ITEM">one paused item</string>
+    <string name="PAUSED_ITEMS">paused items</string>
+    <string name="ONE_FINISHED_ITEM">one finished item</string>
+    <string name="FINISHED_ITEMS">finished items</string>
+    <string name="ONE_PENDING_ITEM">one pending item</string>
+    <string name="PENDING_ITEMS">pending items</string>
+    
+	<string name="QTY_PICKED_ITEMS">PICKED</string>
+    <string name="QTY_PICKED_ITEM">PICKED</string>
+    <string name="QTY_PAUSED_ITEMS">PAUSED</string>
+    <string name="QTY_PAUSED_ITEM">PAUSED</string>
+    <string name="QTY_TRICKY_ITEMS">TRICKY</string>
+    <string name="QTY_TRICKY_ITEM">TRICKY</string>
+    
+    <string name="NEXT_ITEM">NEXT ITEM</string>
+    <string name="LAST_ITEM">LAST ITEM</string>
+    <string name="PAUSE_THIS_ITEM">PAUSE THIS ITEM</string>
+    
+    <string name="CONFIRMED_NEXT_ITEM">Confirmed. NEXT ITEM</string>
+    <string name="CONFIRMED_LAST_ITEM">Confirmed. LAST ITEM</string>
+    
+    <string name="CONFIRMED_NEXT_ITEM_XYZ">Confirmed. NEXT ITEM: Row %1$s , Aisle %2$s , Level %3$s . ITEM: %4$s</string>
+    <string name="CONFIRMED_LAST_ITEM_XYZ">Confirmed. LAST ITEM: Row %1$s , Aisle %2$s , Level %3$s . ITEM: %4$s</string>
+    
+    <string name="CONFIRM">DO YOU CONFIRM</string>
+    
+    <string name="CONFIRM_COMPLETE">CONFIRMED. ORDER COMPLETE</string>
+    
+    <string name="NEXT_ITEM_XYZ">NEXT ITEM: Row %1$s , Aisle %2$s , Level %3$s . ITEM: %4$s</string>
+    <string name="LAST_ITEM_XYZ">LAST ITEM: Row %1$s , Aisle %2$s , Level %3$s . ITEM: %4$s</string>
+    
+    <string name="POSITION_XYZ">Row %1$s, Aisle %2$s, Level %3$s</string>
+    
+    <string name="ORDER_FIRST_ITEM">Order number: %1$s . %2$s . First item: %3$s</string>
+    <string name="ORDER_FIRST_ITEM_XYZ">Order number: %1$s . %2$s . First item: Row %3$s , Aisle %4$s , Level %5$s . ITEM: %6$s</string>
+    
+    <string name="CONFIRM_COMPLETE_PAUSED_ITEMS">CONFIRMED. ORDER COMPLETE. %1$s PAUSED ITEMS</string>
+    <string name="CONFIRM_COMPLETE_PAUSED_ITEM">CONFIRMED. ORDER COMPLETE. %1$s PAUSED ITEM</string>
+    
+    <string name="END_OF_ORDER">END OF ORDER</string>
+    
+    <string name="SAY_AGAIN">SAY AGAIN</string>
+    
+    <string name="RESUME">RESUME</string>
+    <string name="RESUME_PAUSED_ITEMS">RESUME PAUSED ITEMS?</string>
+    
+    <string name="PRIORITY">PRIORITY</string>
+    <string name="HIGH">HIGH</string>
+    <string name="MEDIUM">MEDIUM</string>
+    <string name="LOW">LOW</string>
+    
+    <string name="TOTAL">TOTAL</string>
+    
+    <string name="UPDATE">REFRESH</string>
+    <string name="RETRY">RETRY NOW</string>
+    <string name="REFRESH">REFRESH</string>
+    <string name="TAKE_FIRST">TAKE FIRST</string>
+    <string name="PAUSE_ORDER">PAUSE ORDER</string>
+    <string name="MUTE">MUTE</string>
+    <string name="CANCEL">CANCEL</string>
+    <string name="YES">YES</string>
+    <string name="NO">NO</string>
+    
+    <string name="DOWNLOADING_ORDERS">DOWNLOADING ORDERS</string>
+    <string name="DOWNLOADING_ORDER">DOWNLOADING ORDER</string>
+    <string name="PLEASE_WAIT">PLEASE WAIT...</string>
+    
+    
+    <string name="piso_prompt">Seleccione piso:</string>
+ 	<string name="EXIT">EXIT</string>
+ 	<string name="BACK">VOLVER</string>
+    
+    <string name="WRITE_TAG">GRABAR TAG</string>
+    <string name="warning_nfc_is_off">NFC is currently turned off!</string>
+    <string name="turn_on_nfc">Please turn on NFC in the Settings and then use the back button to return to this app.</string>
+    
+    
+    <string-array name="pisos_arrays">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+</resources>

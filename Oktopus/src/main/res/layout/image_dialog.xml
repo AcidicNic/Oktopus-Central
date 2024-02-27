@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/margin10" >
+
+            <TextView
+                android:id="@+id/itemLineaTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ITEM"
+                android:layout_marginTop="@dimen/margin5"
+                android:textSize="@dimen/text10" />
+
+            <TextView
+                android:id="@+id/itemIdTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="@dimen/text30"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/itemDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin5"
+                android:text="@string/DESCRIPTION"
+                android:textSize="@dimen/text15" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/margin10" >
+
+            <TextView
+                android:id="@+id/cantidadTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="@dimen/margin5"
+                android:text="@string/QTY"
+                android:textSize="@dimen/text10" />
+
+            <TextView
+                android:id="@+id/itemCantidadTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="0"
+                android:textSize="@dimen/text30"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/itemUnidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="@dimen/margin5"
+                android:text="@string/UNIT"
+                android:textSize="@dimen/text15" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin10"
+        android:layout_marginRight="@dimen/margin10"
+        android:layout_marginLeft="@dimen/margin10"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/loading" />
+
+    </LinearLayout>
+ 	
+ 	<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:layout_marginTop="@dimen/margin30">
+
+	    <Button
+	        android:id="@+id/backButton"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="@dimen/margin10"
+	        android:layout_marginLeft="@dimen/margin10"
+	        android:layout_marginRight="@dimen/margin10"
+	        android:layout_weight="1"
+	        android:background="@color/green_button"
+	        android:minHeight="@dimen/bigButtonHeight"
+	        android:text="@string/BACK"
+	        android:textColor="@color/white"
+	        android:textSize="@dimen/text15"
+	        android:textStyle="bold" />
+ 	
+ 	</LinearLayout>
+ 
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<PreferenceCategory 
+		android:title="Voz"
+		android:key="first_category">
+		
+		<CheckBoxPreference 
+			android:key="voiceOnOff"
+			android:summary="Voz y reconocimiento de voz"
+			android:title="Usar voz" 
+			android:defaultValue="true"
+		/>
+		
+		<ListPreference 
+			android:key="voiceSpeed"
+			android:title="Velocidad de la voz"
+			android:summary="Seleccione la velocidad de la voz."
+			android:defaultValue="2" 
+			android:entries="@array/voiceSpeed"
+			android:entryValues="@array/voiceSpeedValues"
+			android:dependency="voiceOnOff"
+		/>	
+			
+	</PreferenceCategory>
+</PreferenceScreen>
