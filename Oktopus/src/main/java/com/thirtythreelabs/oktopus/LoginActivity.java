@@ -54,6 +54,8 @@ public class LoginActivity extends Activity implements OnClickListener {
 	private EditText mOperatorNameText;
 	private EditText mOperatorPasswordText;
 	private Button mLoginButton;
+
+	private Button editURL;
 	
 	private NfcAdapter mNfcAdapter;
 	private ProgressDialog mProgressDialog;
@@ -75,6 +77,9 @@ public class LoginActivity extends Activity implements OnClickListener {
 	    //        WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		
 		setContentView(R.layout.login);
+
+		editURL = (Button) findViewById(R.id.editURL);
+		editURL.setOnClickListener(this);
 
 		mOperatorNameText = (EditText)findViewById(R.id.etNombre);
 		mOperatorPasswordText = (EditText)findViewById(R.id.etPassword);
@@ -153,12 +158,14 @@ public class LoginActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		if(v.getId() == R.id.ButtonEntrar) {
+		if (v.getId() == R.id.ButtonEntrar) {
 			CharSequence literal = getString(R.string.PLEASE_WAIT);
 			mProgressDialog = ProgressDialog.show(this, "", literal, true);
-			
 			operatorLogin();
-		}	
+
+		} else if (v.getId() == R.id.editURL) {
+			startActivity(new Intent(LoginActivity.this, EditURL.class));
+		}
 	}
 	
 	
