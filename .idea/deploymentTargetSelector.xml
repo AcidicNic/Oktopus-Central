@@ -7,6 +7,14 @@
       </SelectionState>
       <SelectionState runConfigName="Oktopus">
         <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2024-02-29T03:20:06.360894100Z">
+          <Target type="DEFAULT_BOOT">
+            <handle>
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\nic40\.android\avd\Blackview_BV9100_API_28.avd" />
+            </handle>
+          </Target>
+        </DropdownSelection>
+        <DialogSelection />
       </SelectionState>
     </selectionStates>
   </component>
