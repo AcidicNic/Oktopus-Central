@@ -111,7 +111,7 @@ public class LoginActivity extends Activity implements OnClickListener {
 		if(Config.URL.equals("http://192.168.1.92/smpm/rest/")){
 			mTestText.setVisibility(View.GONE);
 		}else{
-			mTestText.append("  ---  " + Config.URL);
+			mTestText.append(" (Central)  ---  " + Config.URL);
 		}
 		
 	}
